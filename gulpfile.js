@@ -19,7 +19,7 @@ var paths = {
   vendor: ['./bower.json']
 };
 
-gulp.task('default', ['vendor', 'sass', 'scripts', 'views', 'watch']);
+gulp.task('default', ['vendor', 'sass', 'scripts', 'views']);
 
 // JS APP
 gulp.task('scripts', function() {
@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('vendor', function() {
-    return gulp.src(lib.ext('js').match('!**/*.min.js').files)
+    gulp.src(lib.ext('js').match('!**/*.min.js').files)
         .pipe(concat('base.js'))
         .pipe( uglify() )
         .pipe(gulp.dest('./www/js/'))

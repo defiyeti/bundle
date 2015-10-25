@@ -2,13 +2,24 @@ doctype html
 html(lang='en', data-ng-app='bundle')
     head
         link(rel='stylesheet' href='css/app.css')
-        link(rel='stylesheet' href='css/ionic.app.css')
-        link(rel='stylesheet' href='css/base.css')
+        link(rel='stylesheet' href='lib/ionic/css/ionic.css')
+        link(rel='stylehseet' href='lib/font-awesome/css/font-awesome.min.css')
     body
-        .app-container(data-ui-view='', data-autoscroll='false', data-ng-class='app.viewAnimation')
+        ion-nav-bar.bar-positive
+
+        ion-tabs.tabs-positive
+            ion-tab(icon="ion-home" ui-sref="home")
+                ion-nav-view(name="home")
+            ion-tab(icon="ion-help" ui-sref="help")
+                ion-nav-view(name="help")
+
+        ion-footer-bar.bar.bar-footer
+            h1 Continue
+
         // App Scripts
+        script(src='lib/ionic/js/ionic.bundle.js')
         script(src='js/base.js')
         script(src='js/app.js')
         script(src='cordova.js')
-        script(src='cordova-plugins.js')
+        script(src='cordova_plugins.js')
         include ./templates.jade

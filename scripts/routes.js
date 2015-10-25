@@ -1,21 +1,25 @@
 'use strict';
 angular.module('bundle')
 .config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
-    function basepath(path) {
-        return ['views'].concat(path).join('/');
-    };
 
-    $urlRouterProvider.otherwise('/app/barcode');
+    $urlRouterProvider.otherwise('/home');
 
     $stateProvider
-    .state('app', {
-        url: '/app',
-        abstract: true,
-        templateUrl: basepath(['app.html'])
+    .state('home', {
+        url: '/home',
+        views: {
+            home: {
+              templateUrl: 'views/home.html'
+            }
+        }
     })
-    .state('app.barcode', {
-        url: '/barcode',
+    .state('help', {
+        url: '/help',
         controller: 'DashboardCtrl',
-        templateUrl: basepath(['dashboard.html'])
+        views: {
+            home: {
+              templateUrl: 'views/help.html'
+            }
+        }
     });
 });

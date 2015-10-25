@@ -1,3 +1,8 @@
-input#file(type='file', on-file-pick='startScan', style='width: 0; height: 0;')
-div()
-    span {{items()}}
+ion-view(title="Home")
+    ion-content(padding="true")
+        div(style="height: 300px")
+            h1 CAMERA GOES HERE
+            button.button(ng-click="startScan") SCAN
+        div
+            ul
+                li(ng-repeat="item in items") {{item}}

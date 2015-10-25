@@ -1,8 +1,10 @@
 .bar.bar-header.bar-light
     h1.title Barcode Scanner
 
-ion-content(ui-view)
 
 .bar.bar-footer.bar-balanced
-    .title(ng-click="startCamera()")
-        i.fa.fa-camera
+    ion-tabs.tabs-positive
+        ion-tab(icon="ion-home" ui-sref="home")
+            ion-nav-view(name="home")
+        ion-tab(icon="ion-help" ui-sref="help")
+            ion-nav-view(name="help")
