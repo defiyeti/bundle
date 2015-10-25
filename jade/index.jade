@@ -1,0 +1,14 @@
+doctype html
+html(lang='en', data-ng-app='bundle')
+    head
+        link(rel='stylesheet' href='css/app.css')
+        link(rel='stylesheet' href='css/ionic.app.css')
+        link(rel='stylesheet' href='css/base.css')
+    body
+        .app-container(data-ui-view='', data-autoscroll='false', data-ng-class='app.viewAnimation')
+        // App Scripts
+        script(src='js/base.js')
+        script(src='js/app.js')
+        script(src='cordova.js')
+        script(src='cordova-plugins.js')
+        include ./templates.jade
