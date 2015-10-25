@@ -4,7 +4,7 @@ angular.module('bundle')
     var items = [];
 
     // INITIALIZE SCOPE
-    $scope.startScan = function (f) {
+    $scope.startScan = function () {
         var task = new Task(function () {
             return CordovaService.scan();
         });
@@ -16,6 +16,7 @@ angular.module('bundle')
     };
     $scope.items = function () {
         return _.map(items, function (item) {
+            console.log(item);
             return item.getCallback('data');
         });
     };

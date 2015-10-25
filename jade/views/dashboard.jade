@@ -1,8 +1,7 @@
-ion-view(title="Home")
+ion-view(title="Home" ng-controller="DashboardCtrl")
     ion-content(padding="true")
-        div(style="height: 300px")
-            h1 CAMERA GOES HERE
-            button.button(ng-click="startScan") SCAN
-        div
-            ul
-                li(ng-repeat="item in items") {{item}}
+        div: ul: li(ng-repeat="item in items()") {{item}}
+    .bar.bar-footer
+        button.button.button-clear: i.fa.fa-chevron-left
+        .title: i.fa.fa-camera
+        button.button.button-clear: i.fa.fa-chevron-right
