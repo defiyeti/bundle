@@ -2,7 +2,8 @@
 
 angular.module('bundle', [
     'ionic',
-    'ngCordova'
+    'ngCordova',
+    'xml'
 ])
 .run(function ($ionicPlatform){
     $ionicPlatform.ready(function() {

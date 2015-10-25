@@ -1,7 +1,10 @@
 ion-view(title="Home" ng-controller="DashboardCtrl")
     ion-content(padding="true")
-        div: ul: li(ng-repeat="item in items()") {{item}}
-    .bar.bar-footer
+        div: ul: li(ng-repeat="item in items()") 
+        img(ng-src="item.imageurl" style="max-width=50px; max-height=50px;")
+        p {{item.productname}}
+        p {{item.price}}
+    .bar.bar-footer.bar-positive
         button.button.button-clear: i.fa.fa-chevron-left
-        .title: i.fa.fa-camera
+        .title(ng-click="startScan()"): i.fa.fa-camera Scan
         button.button.button-clear: i.fa.fa-chevron-right

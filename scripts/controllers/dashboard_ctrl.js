@@ -1,5 +1,5 @@
 angular.module('bundle')
-.controller('DashboardCtrl', function ($scope, $q, Utils, CordovaService) {
+.controller('DashboardCtrl', function ($scope, $q, Utils, CordovaService, UPCService) {
     var Task = Utils.Task;
     var items = [];
 
@@ -8,15 +8,12 @@ angular.module('bundle')
         var task = new Task(function () {
             return CordovaService.scan();
         });
-        task.registerCallback('data', function (result) {
-            return result;
-        });
+        task.registerCallback('data', UPCService.getItemInfo);
         items.push(task);
         task.exec();
     };
     $scope.items = function () {
         return _.map(items, function (item) {
-            console.log(item);
             return item.getCallback('data');
         });
     };

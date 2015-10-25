@@ -1,7 +1,8 @@
 'use strict';
 angular.module('bundle')
 .config(function ($httpProvider, $stateProvider, $urlRouterProvider) {
-
+    $httpProvider.interceptors.push('xmlHttpInterceptor');
+    
     $urlRouterProvider.otherwise('/home');
 
     $stateProvider
